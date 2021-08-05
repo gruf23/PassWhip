@@ -4,7 +4,8 @@
   "description": "A simple configurable password generator",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "lint": "./node_modules/.bin/eslint src test index.js"
   },
   "keywords": [
     "password",
