@@ -2,7 +2,7 @@ const {randomBytes} = require('crypto');
 
 const defaultOptions = {
   length: 10,
-  characters: true,
+  letters: true,
   numbers: true,
   symbols: true,
   randomCase: true,
@@ -20,7 +20,7 @@ const charsetEnum = Object.freeze({
 });
 
 /**
- * get pull of characters, available to use in password
+ * Get pull of characters, available to use in password
  * @param {Object} options - options parameter of generate function.
  * @return {string[]}
  */
@@ -43,6 +43,20 @@ const getPool = function (options) {
   return pool.split('');
 };
 
+/**
+ * Generate password
+ * @param opts - password string settings
+ * @param {Number} opts.length - password length
+ * @param {boolean} opts.letters - Should password include letters
+ * @param {boolean} opts.numbers - Should password include numbers
+ * @param {boolean} opts.symbols - Should password include special chars
+ * @param {boolean} opts.randomCase - Should password include random case letters
+ * @param {boolean} opts.uppercase - Should password include uppercase letters
+ * @param {boolean} opts.lowercase - Should password include lowercase letters
+ * @param {[]} opts.exclude - Characters, that shouldn't be in a generated password
+ * @param {boolean} opts.excludeSimilarCharacters - Exclude visually similar characters from password
+ * @return {string}
+ */
 const generate = function (opts) {
   const options = Object.assign(defaultOptions, opts);
 
