@@ -1,0 +1,25 @@
+{
+  "name": "pwdgen",
+  "version": "1.0.0",
+  "description": "A simple configuragble password generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "password",
+    "generator",
+    "pass",
+    "random",
+    "pwd",
+    "security",
+    "crypto"
+  ],
+  "author": "Mikenin Igor",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "eslint": "^7.32.0",
+    "mocha": "^9.0.3"
+  }
+}
