@@ -13,7 +13,18 @@ const charsetEnum = Object.freeze({
  * @return {string[]}
  */
 const getPool = function (options) {
-  let pool = charsetEnum.lowercase + charsetEnum.uppercase;
+  let pool = '';
+  if (options.randomCase || (options.uppercase && options.lowercase)) {
+    pool += charsetEnum.lowercase + charsetEnum.uppercase;
+  } else {
+    if (options.uppercase && !options.lowercase) {
+      pool += charsetEnum.uppercase;
+    } else if (options.lowercase && !options.uppercase) {
+      pool += charsetEnum.lowercase;
+    } else {
+      throw new Error('Case must be selected');
+    }
+  }
   if (options.numbers) pool += charsetEnum.numbers;
   if (options.symbols) pool += charsetEnum.symbols;
 
