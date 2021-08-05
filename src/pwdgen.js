@@ -39,7 +39,11 @@ const getPool = function (options) {
   }
   if (options.numbers) pool += charsetEnum.numbers;
   if (options.symbols) pool += charsetEnum.symbols;
-
+  if (options.exclude) {
+    options.exclude.map(char => {
+      pool = pool.replace(char, '');
+    });
+  }
   return pool.split('');
 };
 
