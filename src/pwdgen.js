@@ -16,7 +16,8 @@ const charsetEnum = Object.freeze({
   lowercase: 'abcdefghijklmnopqrstuvwxyz',
   uppercase: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
   numbers: '0123456789',
-  symbols: '!@#$%^&*()+_-=}{[]|:;"/?.><,`~'
+  symbols: '!@#$%^&*()+_-=}{[]|:;"/?.><,`~',
+  similarCharacters: /[ilLI|`oO0]/g,
 });
 
 /**
@@ -45,6 +46,9 @@ const getPool = function (options) {
     options.exclude.map(char => {
       pool = pool.replace(char, '');
     });
+  }
+  if (options.excludeSimilarCharacters) {
+    pool = pool.replace(charsetEnum.similarCharacters, '');
   }
   if (!pool.length) {
     throw new Error('Pool shouldn\'t be empty.');
