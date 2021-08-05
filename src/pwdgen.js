@@ -26,15 +26,17 @@ const charsetEnum = Object.freeze({
  */
 const getPool = function (options) {
   let pool = '';
-  if (options.randomCase || (options.uppercase && options.lowercase)) {
-    pool += charsetEnum.lowercase + charsetEnum.uppercase;
-  } else {
-    if (options.uppercase && !options.lowercase) {
-      pool += charsetEnum.uppercase;
-    } else if (options.lowercase && !options.uppercase) {
-      pool += charsetEnum.lowercase;
+  if (options.letters) {
+    if (options.randomCase || (options.uppercase && options.lowercase)) {
+      pool += charsetEnum.lowercase + charsetEnum.uppercase;
     } else {
-      throw new Error('Case must be selected');
+      if (options.uppercase && !options.lowercase) {
+        pool += charsetEnum.uppercase;
+      } else if (options.lowercase && !options.uppercase) {
+        pool += charsetEnum.lowercase;
+      } else {
+        throw new Error('Case must be selected');
+      }
     }
   }
   if (options.numbers) pool += charsetEnum.numbers;
@@ -43,6 +45,9 @@ const getPool = function (options) {
     options.exclude.map(char => {
       pool = pool.replace(char, '');
     });
+  }
+  if (!pool.length) {
+    throw new Error('Pool shouldn\'t be empty.');
   }
   return pool.split('');
 };
