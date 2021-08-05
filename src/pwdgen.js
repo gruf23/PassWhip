@@ -69,7 +69,7 @@ const getPool = function (options) {
  * @param {boolean} opts.excludeSimilarCharacters - Exclude visually similar characters from password
  * @return {string}
  */
-const generate = function (opts) {
+const generatePassword = function (opts) {
   const options = Object.assign(defaultOptions, opts);
 
   const bytes = randomBytes(options.length);
@@ -83,4 +83,4 @@ const generate = function (opts) {
   return password;
 };
 
-module.exports = generate;
+module.exports = generatePassword;
