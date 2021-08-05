@@ -71,13 +71,13 @@ const generate = function (opts) {
 
   const bytes = randomBytes(options.length);
   const pool = getPool(options);
-  let res = '';
+  let password = '';
 
   for (let i = 0; i <= options.length - 1; i += 1) {
-    res += pool[bytes.readUInt8(i) % pool.length];
+    password += pool[bytes.readUInt8(i) % pool.length];
   }
 
-  return res;
+  return password;
 };
 
 module.exports = generate;
