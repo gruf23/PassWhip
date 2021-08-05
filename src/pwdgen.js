@@ -1,5 +1,17 @@
 const {randomBytes} = require('crypto');
 
+const defaultOptions = {
+  length: 10,
+  characters: true,
+  numbers: true,
+  symbols: true,
+  randomCase: true,
+  uppercase: false,
+  lowercase: false,
+  exclude: [],
+  excludeSimilarCharacters: false
+};
+
 const charsetEnum = Object.freeze({
   lowercase: 'abcdefghijklmnopqrstuvwxyz',
   uppercase: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
@@ -29,18 +41,6 @@ const getPool = function (options) {
   if (options.symbols) pool += charsetEnum.symbols;
 
   return pool.split('');
-};
-
-const defaultOptions = {
-  length: 10,
-  characters: true,
-  numbers: true,
-  symbols: true,
-  randomCase: true,
-  uppercase: false,
-  lowercase: false,
-  exclude: [],
-  excludeSimilarCharacters: false
 };
 
 const generate = function (opts) {
