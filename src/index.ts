@@ -30,7 +30,7 @@ interface Options {
 }
 
 const defaultOptions: Options = {
-  length: 10,
+  length: 12,
   letters: true,
   numbers: true,
   symbols: true,
@@ -97,7 +97,7 @@ const getPool = function (options: Options): string[] {
  * @param {boolean} opts.excludeSimilarCharacters - Exclude visually similar characters from password
  * @return {string}
  */
-export const generatePassword = function (opts: Options): string {  // todo create interface for options
+export const generatePassword = function (opts: Options): string {
   const options = Object.assign(defaultOptions, opts);
 
   const bytes = randomBytes(options.length);
