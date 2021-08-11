@@ -1,5 +1,5 @@
 const assert = require('chai').assert;
-const pwdGen = require('../lib/pwdgen');
+const pwdGen = require('../lib/cjs');
 
 describe('Generate password', function () {
   it('Should generate password when no options provided', function () {
