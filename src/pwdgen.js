@@ -1,4 +1,19 @@
-const {randomBytes} = require('crypto');
+const isBrowserEnv = !!(typeof self !== 'undefined' && (self.crypto || self.msCrypto));
+
+const randomBytes = function (length) {
+  if (isBrowserEnv) {
+    const crypto = (self.crypto || self.msCrypto);
+    const quota = 65536
+    const array = new Uint8Array(length);
+    for (let i = 0; i < length; i += quota) {
+      crypto.getRandomValues(array.subarray(i, i + Math.min(length - i, quota)));
+    }
+    return array;
+  } else {
+    const {randomBytes} = require('crypto');
+    return randomBytes(length);
+  }
+};
 
 const defaultOptions = {
   length: 10,
@@ -54,7 +69,6 @@ const getPool = function (options) {
   }
   return pool.split('');
 };
-
 /**
  * Generate password
  * @param opts - password string settings
@@ -69,18 +83,15 @@ const getPool = function (options) {
  * @param {boolean} opts.excludeSimilarCharacters - Exclude visually similar characters from password
  * @return {string}
  */
-const generatePassword = function (opts) {
+export const generatePassword = function (opts) {
   const options = Object.assign(defaultOptions, opts);
 
   const bytes = randomBytes(options.length);
   const pool = getPool(options);
   let password = '';
-
   for (let i = 0; i <= options.length - 1; i += 1) {
-    password += pool[bytes.readUInt8(i) % pool.length];
+    password += pool[bytes[i] % pool.length];
   }
 
   return password;
 };
-
-module.exports = generatePassword;
