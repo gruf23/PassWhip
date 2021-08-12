@@ -1,6 +1,5 @@
 # passWhip ![nodejs workflow](https://github.com/gruf23/PassWhip/actions/workflows/nodejs.yml/badge.svg)
 [![NPM](https://nodei.co/npm/passwhip.png)](https://nodei.co/npm/passwhip/)
-## What is it?
 
 ## Motivation
 Existing password generating packets are using the `Math.random()`, which doesn't provide a proper level of entropy,
