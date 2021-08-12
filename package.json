@@ -25,7 +25,7 @@
     "security",
     "crypto"
   ],
-  "author": "Mikenin Igor",
+  "author": "Mikenin Igor <mikenin.igor@gmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
