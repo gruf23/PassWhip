@@ -1,6 +1,6 @@
 {
   "name": "passwhip",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "passWhip is a cross platform configurable password generator based on random bytes.",
   "main": "lib/cjs/index.js",
   "module": "lib/esm/index.js",
