@@ -1,7 +1,7 @@
 {
-  "name": "pwdgen",
+  "name": "passwhip",
   "version": "1.0.0",
-  "description": "A simple configurable password generator",
+  "description": "passWhip is a cross platform configurable password generator based on random bytes.",
   "main": "lib/cjs/index.js",
   "module": "lib/esm/index.js",
   "types": "lib/types/index.d.ts",
@@ -21,9 +21,7 @@
   "keywords": [
     "password",
     "generator",
-    "pass",
     "random",
-    "pwd",
     "security",
     "crypto"
   ],

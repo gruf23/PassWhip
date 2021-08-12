@@ -22,13 +22,13 @@ export default {
     {
       file: 'lib/bundles/bundle.umd.js',
       format: 'umd',
-      name: 'pwdGen',
+      name: 'passWhip',
       sourcemap: true
     },
     {
       file: 'lib/bundles/bundle.umd.min.js',
       format: 'umd',
-      name: 'pwdGen',
+      name: 'passWhip',
       plugins: [terser()],
       sourcemap: true
     }
