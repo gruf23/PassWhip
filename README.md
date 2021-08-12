@@ -1,4 +1,4 @@
-# passWhip ![nodejs workflow](https://github.com/gruf23/pwdgen/actions/workflows/nodejs.yml/badge.svg)
+# passWhip ![nodejs workflow](https://github.com/gruf23/PassWhip/actions/workflows/nodejs.yml/badge.svg)
 
 ## What is it?
 **passWhip** is a cross-platform configurable password generator based on random bytes.
