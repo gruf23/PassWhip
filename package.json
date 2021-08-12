@@ -27,6 +27,14 @@
   ],
   "author": "Mikenin Igor",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gruf23/PassWhip"
+  },
+  "bugs": {
+    "url": "https://github.com/gruf23/PassWhip/issues"
+  },
+  "homepage": "https://github.com/gruf23/PassWhip",
   "devDependencies": {
     "@babel/cli": "^7.14.8",
     "@babel/core": "^7.15.0",
